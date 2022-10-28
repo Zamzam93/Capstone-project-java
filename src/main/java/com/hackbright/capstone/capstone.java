@@ -1,13 +1,13 @@
-package com.hackbright.moodTracker;
+package com.hackbright.capstone;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MoodTrackerApplication {
+public class capstone {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MoodTrackerApplication.class, args);
+		SpringApplication.run(capstone.class, args);
 	}
 
 }
