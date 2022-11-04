@@ -1,6 +1,8 @@
 var emoji = document.getElementById('emoji');
 var mood = document.getElementById('mood');
 var sliderValue = document.getElementById('range');
+//var btnCheck = document.querySelector('.check-in');
+
 
 sliderValue.oninput = function() {
     var value = this.value;
@@ -24,4 +26,41 @@ sliderValue.oninput = function() {
         emoji.innerHTML = '&#128514;';
         mood.innerHTML = 'Joyful';
     }
+
+
 }
+//function checkInMessage(){
+//
+//document.getElementById('message').innerHtml = 'you will be okay';
+//
+//}
+//btnCheck.addEventListener('click',checkInMessage);
+
+const btnCheck = document.querySelector('.check-in');
+
+
+
+
+function checkInMessage() {
+if(mood.innerHTML == 'Worried'){
+
+    document.getElementById('message').innerHTML = "You will be okay";
+  }
+  else if(mood.innerHTML == 'Sad'){
+  document.getElementById('message').innerHTML = "You will be happy soon";
+  }
+  else if(mood.innerHTML == 'Anxious'){
+  document.getElementById('message').innerHTML = "You will be happy glad";
+  }
+  else if( mood.innerHTML == 'Happy'){
+  document.getElementById('message').innerHTML = "You will be happy excited"
+  }
+  else if( mood.innerHTML == 'Joyful'){
+  document.getElementById('message').innerHTML = "You are doing amazing"
+
+
+  }
+}
+
+
+btnCheck.addEventListener('click', checkInMessage);

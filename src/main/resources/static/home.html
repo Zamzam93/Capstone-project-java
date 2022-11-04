@@ -11,26 +11,35 @@
 
 </head>
 <body>
+
+<header>
+
+    <h1>BREATH</h1>
+    <nav>
+        <ul>
+            <li><a href="home.html" class="nav-btn">HOME</a></li>
+            <li><a href="login.html"class="nav-btn">LOGOUT</a></li>
+        </ul>
+    </nav>
+</header>
+  <h2 class="emotion">CHOOSE YOUR EMOTION</h2>
 <div class="container">
     <div class="emoji" id="emoji">&#128543;</div>
     <p class="mood" id="mood">Worried</p>
     <input type="range" min="0" max="100" value="10" class="emoji-slider" id="range">
-
 </div>
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#">Breath</a>
-        </div>
-        <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">Logout</a></li>
+<div class="text-container">
+    <textarea class="form-control" id="mood-input" placeholder="Describe what's happening..." rows="5"></textarea>
 
-        </ul>
-    </div>
-</nav>
+</textarea>
+</div>
 
+<div>
+    <button class="check-in" >Check-in</button>
+</div>
+<h2 id="message" class="emotion">
 
+</h2>
 
 <script src="./javascript/home.js" type="application/javascript"></script>
 
