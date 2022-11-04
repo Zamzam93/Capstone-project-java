@@ -8,7 +8,19 @@ body {
  align-items: center;
  justify-content: center;
  background-color:#432C7A;
+}
 
+#logo{
+    display: flex;
+    gap:15px;
+    align-items:center;
+    justify-items:center;
+    flex-direction:column;
+}
+
+.logoImg{
+    width:100px;
+    border-radius:15px;
 
 }
 
@@ -63,6 +75,12 @@ header {
   align-items: center;
    font-family: 'Courier New', Courier, monospace;
 }
+header h1{
+color:#fff;
+font-weight:bold;
+font-style:italic;
+
+}
 
 header nav ul li {
   list-style: none;
@@ -91,10 +109,13 @@ color:#FF8FB1;
   }
 
 .emotion{
-font-size:16px;
+font-size:26px;
 color:#fff;
 padding:20px;
 text-align:center;
+font-weight:bold;
+font-style:italic
+font-family:sans serif;
 
 }
 
@@ -104,6 +125,6 @@ color:#fff;
 padding:20px;
 border-radius:20px;
 font-weight:bold;
-margin-left:50%;
+margin-left:48%;
 
 }
