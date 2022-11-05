@@ -4,6 +4,7 @@ var sliderValue = document.getElementById('range');
 //var btnCheck = document.querySelector('.check-in');
 
 
+
 sliderValue.oninput = function() {
     var value = this.value;
     if(value <=20){
@@ -64,3 +65,10 @@ if(mood.innerHTML == 'Worried'){
 
 
 btnCheck.addEventListener('click', checkInMessage);
+
+
+
+
+
+
+
