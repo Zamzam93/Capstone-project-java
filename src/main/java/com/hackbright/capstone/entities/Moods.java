@@ -21,16 +21,21 @@ public class Moods {
     //private String name;
 
     @Column
-    private int date;
+    private String category;
 
     @Column(columnDefinition = "text")
     private String moodJournal;
 
     public Moods(MoodDto mood_Dto) {
+        if(mood_Dto.getId() != null){
+            this.id = mood_Dto.getId();
+        }
         if(mood_Dto.getText()!= null){
             this.moodJournal= mood_Dto.getText();
         }
-
+        if(mood_Dto.getCategory() != null){
+            this.category = mood_Dto.getCategory();
+        }
     }
 
     @ManyToOne // creates the association within hibernate

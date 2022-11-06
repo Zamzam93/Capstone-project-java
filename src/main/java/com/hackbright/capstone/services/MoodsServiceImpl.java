@@ -23,14 +23,17 @@ public class MoodsServiceImpl implements MoodsService {
     @Autowired
     private MoodsRepository moodsRepository;
     // add a mood description
+
     @Override
     @Transactional
     public void addMoods(MoodDto moodDto, Long userId){
         Optional<User> userOptional = userRepository.findById(userId);
         Moods moods = new Moods(moodDto);
-        userOptional.ifPresent(moods::setUser);
-        moodsRepository.saveAndFlush(moods);
+        moods.setUser(userOptional.get());
+        moods.setCategory(moodDto.getCategory());
+        moods.setMoodJournal(moodDto.getText());
 
+        moodsRepository.saveAndFlush(moods);
 
 
     }

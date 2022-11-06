@@ -12,6 +12,7 @@ import java.io.Serializable;
 public class MoodDto implements Serializable {
     private Long id;
     private String text;
+    private String category;
     private UserDto userDto;
 
     public MoodDto(Moods moods) {
@@ -21,5 +22,9 @@ public class MoodDto implements Serializable {
         if(moods.getMoodJournal()!= null){
             this.text= moods.getMoodJournal();
         }
+        if (moods.getCategory() != null){
+            this.category = moods.getCategory();
+        }
     }
+
 }
