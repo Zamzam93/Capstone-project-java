@@ -6,7 +6,7 @@ window.onload = function(){
 getMoods()
 }
 const baseUrl = "http://localhost:8080/api/v1/moods/"
-const list = document.getElementById("past")
+const PastMood = document.getElementById("PastMood")
 
 
 async function getMoods(userId){
@@ -32,7 +32,7 @@ async function getMoods(userId){
                                                    </div>
                                                </div>
                                            </div>`
-         list.appendChild(listItem)
+         PastMood.appendChild(listItem)
          })
 
 
