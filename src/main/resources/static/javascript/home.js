@@ -110,9 +110,10 @@ async function addMood(obj){
 
 
 
-//function openPastMood(){
-//document.location.href = "http//localhost:8080/PastMood.html"
-//}
+function openPastMood(){
+document.location.href = "http://localhost:8080/PastMood.html"
+}
+
 let PastMood = document.getElementById("PastMood")
 
 PastMood.addEventListener('click', openPastMood);
