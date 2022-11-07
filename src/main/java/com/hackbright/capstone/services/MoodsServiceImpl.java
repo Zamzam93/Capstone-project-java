@@ -29,11 +29,22 @@ public class MoodsServiceImpl implements MoodsService {
     public void addMoods(MoodDto moodDto, Long userId){
         Optional<User> userOptional = userRepository.findById(userId);
         Moods moods = new Moods(moodDto);
-        moods.setUser(userOptional.get());
-        moods.setCategory(moodDto.getCategory());
-        moods.setMoodJournal(moodDto.getText());
+        userOptional.ifPresent(user -> {
+            //Moods moods = new Moods(moodDto);
+            moods.setUser(userOptional.get());
+            moods.setCategory(moodDto.getCategory());
+            moods.setMoodJournal(moodDto.getText());
 
-        moodsRepository.saveAndFlush(moods);
+            moodsRepository.saveAndFlush(moods);
+        });
+//        Moods moods = new Moods(moodDto);
+//        moods.setUser(userOptional.get());
+//        moods.setCategory(moodDto.getCategory());
+//        moods.setMoodJournal(moodDto.getText());
+//
+//        moodsRepository.saveAndFlush(moods);
+
+        //return response;
 
 
     }

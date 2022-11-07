@@ -1,7 +1,9 @@
-var emoji = document.getElementById('emoji');
-var mood = document.getElementById('mood');
-var sliderValue = document.getElementById('range');
+var emoji = document.getElementById("emoji");
+var mood = document.getElementById("mood");
+var sliderValue = document.getElementById("range");
 //var btnCheck = document.querySelector('.check-in');
+
+let noteBody = document.getElementById("note-form")
 
 const headers = {
     'Content-Type': 'application/json'
@@ -71,11 +73,27 @@ btnCheck.addEventListener('click', checkInMessage);
 
 const moodInput = document.getElementById("mood-input")
 const saveButton = document.getElementById('update-mood-mood-button')
+
+const handleSubmit =  async (e) => {
+e.preventDefault()
+let noteObj = {
+        category: mood.innerHTML,
+        text: moodInput.value
+
+    }
+    await addMood(noteObj)
+    moodInput.value = ''
+}
+
+
 async function addMood(obj){
     let noteObj = {
         category: mood.innerHTML,
         text: moodInput.value
+
     }
+    console.log(noteObj.text)
+
     const response = await fetch('http://localhost:8080/api/v1/moods/user/1',{
         method: "POST",
         body: JSON.stringify(noteObj),
@@ -83,15 +101,18 @@ async function addMood(obj){
     })
         .catch(err => console.error(err.message))
     if (response.status == 200) {
-        return getMoods(userId);
+//        return getMoods(userId);
+          return "i'm working";
     }
 
 
 }
 
-function openPastMood(){
-document.location.href = "http//localhost:8080/PastMood.html"
-}
+
+
+//function openPastMood(){
+//document.location.href = "http//localhost:8080/PastMood.html"
+//}
 let PastMood = document.getElementById("PastMood")
 
 PastMood.addEventListener('click', openPastMood);

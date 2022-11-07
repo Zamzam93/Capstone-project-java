@@ -18,7 +18,8 @@ public interface MoodsService {
     @Transactional
     void updateMoodsById(MoodDto moodDto);
 
+    @Transactional
     List<MoodDto> getAllMoodsByUserId(Long userId);
-
+    @Transactional
     Optional<MoodDto> getMoodId(Long moodId);
 }

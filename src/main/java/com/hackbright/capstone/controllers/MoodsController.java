@@ -27,7 +27,7 @@ public class MoodsController {
     // get a new mood
 
     @PostMapping("/user/{userId}")
-    public void addNote (@RequestBody MoodDto moodDto, @PathVariable Long userId){
+    public void addMood (@RequestBody MoodDto moodDto, @PathVariable Long userId){
         moodsService.addMoods(moodDto, userId);
     }
 
