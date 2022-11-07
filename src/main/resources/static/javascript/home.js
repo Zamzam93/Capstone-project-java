@@ -57,10 +57,10 @@ if(mood.innerHTML == 'Worried'){
   document.getElementById('message').innerHTML = "Go easy on yourself.Whatever you do today, let it be enough.";
   }
   else if( mood.innerHTML == 'Happy'){
-  document.getElementById('message').innerHTML = "Wonderful"
+  document.getElementById('message').innerHTML = "Wonderful";
   }
   else if( mood.innerHTML == 'Joyful'){
-  document.getElementById('message').innerHTML = "You are doing amazing"
+  document.getElementById('message').innerHTML = "You are doing amazing.";
 
 
   }
@@ -87,86 +87,14 @@ async function addMood(obj){
     }
 
 
-
-
 }
 
-
-async function getMoods(userId) {
-    await fetch(`${baseUrl}user/${userId}`, {
-        method: "GET",
-        headers: headers
-    })
-        .then(response => response.json())
-        .then(data => createMoodCards(data))
-        .catch(err => console.error(err))
+function openPastMood(){
+document.location.href = "http//localhost:8080/PastMood.html"
 }
+let PastMood = document.getElementById("PastMood")
 
-async function getMoodById(moodId){
-   await fetch(baseUrl + moodId,{
-           method: "GET",
-           headers: headers
-       })
-          .then(res => res.json())
-          .then(data => populateModal(data))
-          .catch(err => console.error(err.message))
-
-}
-
-async function handleMoodEdit(moodId){
-let noteObj = {
-        category: mood.innerHTML,
-        text: moodInput.value
-    }
-
-    await fetch(baseUrl, {
-            method: "PUT",
-            body: JSON.stringify(bodyObj),
-            headers: headers
-        })
-            .catch(err => console.error(err))
-
-        return getMoods(userId);
-    }
-}
-
-async function handleDelete(moodId){
-    await fetch(baseUrl + moodId, {
-        method: "DELETE",
-        headers: headers
-    })
-        .catch(err => console.error(err))
-
-    return getMoods(userId);
-}
-
-const createMoodCards = (array) => {
-    moodContainer.innerHTML = ''
-    array.forEach(obj => {
-        let moodCard = document.createElement("div")
-        moodCard.classList.add("m-2")
-        moodCard.innerHTML = `
-            <div class="card d-flex" style="width: 18rem; height: 18rem;">
-                <div class="card-body d-flex flex-column  justify-content-between" style="height: available">
-                    <p class="card-text">${obj.body}</p>
-                    <div class="d-flex justify-content-between">
-                        <button class="btn btn-danger" onclick="handleDelete(${obj.id})">Delete</button>
-                        <button onclick="getMoodById(${obj.id})" type="button" class="btn btn-primary"
-                        data-bs-toggle="modal" data-bs-target="#note-edit-modal">
-                        Edit
-                        </button>
-                    </div>
-                </div>
-            </div>
-        `
-        moodContainer.append(moodCard);
-    })
-}
-
-
-
-
-
+PastMood.addEventListener('click', openPastMood);
 btnCheck.addEventListener('click', checkInMessage);
 saveButton.addEventListener('click', addMood);
 
