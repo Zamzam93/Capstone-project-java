@@ -22,7 +22,7 @@ public class MoodsServiceImpl implements MoodsService {
 
     @Autowired
     private MoodsRepository moodsRepository;
-    // add a mood description
+
 
     @Override
     @Transactional
@@ -48,7 +48,7 @@ public class MoodsServiceImpl implements MoodsService {
 
 
     }
-    // delete an
+
     @Override
     @Transactional
     public void deleteMoodsById(Long moodsId){
@@ -56,7 +56,7 @@ public class MoodsServiceImpl implements MoodsService {
         moodsOptional.ifPresent(moods -> moodsRepository.delete(moods));
 
 
-    // update mood
+
 
 
 
@@ -71,7 +71,7 @@ public class MoodsServiceImpl implements MoodsService {
         });
     }
 
-    // need to understand what this code is doing
+
 
     @Override
     public List<MoodDto> getAllMoodsByUserId(Long userId) {
@@ -93,7 +93,6 @@ public class MoodsServiceImpl implements MoodsService {
         }
             return Optional.empty();
     }
-// With the methods in place we are ready to extract our Interface and begin working on our Controllers! Refactor and extract
-// a new interface called “NoteService” the same way we did the UserServiceImpl earlier.
+
     }
 

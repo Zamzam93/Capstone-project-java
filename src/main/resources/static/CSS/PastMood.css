@@ -6,7 +6,18 @@ background-position:center;
  }
 
 
-
-
+#PastMood{
+      background: #006699;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 300px;
+      margin: 20px;
+     font-family: 'Galindo', sans-serif;
+      font-size: 18px;
+       font-style: italic;
 
 }
+
+
+
+
